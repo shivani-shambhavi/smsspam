@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Email Spam Classifier</title>
+    <title>Spam Classifier</title>
+    <script>
+        function classifyText() {
+            var text = document.getElementById('text').value;
+            var result = document.getElementById('result');
+
+            if (text.length > 10) {
+                result.innerText = 'Not Spam';
+            } else {
+                result.innerText = 'Spam';
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Email Spam Classifier</h1>
-    <form action="/classify" method="post">
-        <label for="email">Enter your email:</label><br>
-        <input type="text" id="email" name="email"><br>
-        <input type="submit" value="Submit">
-    </form>
+    <h1>Spam Classifier</h1>
+    <label for="text">Enter text:</label><br>
+    <textarea id="text" rows="4" cols="50"></textarea><br>
+    <button onclick="classifyText()">Classify</button><br>
+    <p id="result"></p>
 </body>
 </html>

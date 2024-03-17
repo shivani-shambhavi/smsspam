@@ -19,7 +19,7 @@ def index():
         # Return the classification result
         return render_template('index.html', email=email, prediction=prediction)
     else:
-        return render_template('index.html')
+        return render_template('index.html', email='', prediction='')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -7,6 +7,15 @@
         body {
             padding-top: 20px;
             padding-bottom: 60px;
+            background: linear-gradient(45deg, #f6d365, #fda085);
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .footer {
             position: fixed;
@@ -21,12 +30,14 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="mt-5">Spam Classifier</h1>
-        <label for="text" class="form-label">Enter text:</label>
-        <textarea class="form-control mb-3" id="text" rows="4" cols="50"></textarea>
-        <button class="btn btn-primary mb-3" onclick="classifyText()">Classify</button>
-        <p id="result"></p>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Spam Classifier</h1>
+        <div class="mb-3">
+            <label for="text" class="form-label">Enter text:</label>
+            <textarea class="form-control" id="text" rows="4" cols="50"></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="classifyText()">Classify</button>
+        <p id="result" class="mt-3"></p>
     </div>
     <footer class="footer">
         <div class="container">

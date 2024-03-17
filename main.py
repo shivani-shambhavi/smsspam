@@ -3,21 +3,23 @@ import pickle
 
 app = Flask(__name__)
 
-pipe = pickle.load(open("Naive_model1.pkl", "rb"))
+# Load the trained model
+with open('Naive_model1.pkl', 'rb') as model_file:
+    model = pickle.load(model_file)
 
-@app.route('/', methods=["GET", "POST"])
-def main_function():
-    if request.method == "POST":
-        text = request.form
-        emails = text['email']
-
-        list_email = [emails]
-        output = pipe.predict(list_email)[0]
-
-        return output
-
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        # Get the email input from the form
+        email = request.form['email']
+        
+        # Perform classification using the loaded model
+        prediction = model.predict([email])[0]
+        
+        # Return the classification result
+        return render_template('index.html', email=email, prediction=prediction)
     else:
-        return render_template("index.html")
+        return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

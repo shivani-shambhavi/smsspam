@@ -121,25 +121,25 @@
     <!-- Input form -->
     <div class="container">
         <h2>Type an Email here to check if it is Spam or Ham</h2>
-        <form action="/" method="POST">
+        <form id="emailForm">
             <div class="form-floating">
                 <textarea class="form-control" placeholder="Write your mail here.." id="email" name="email"
                     style="height: 100px"></textarea>
                 <label for="email">Write your email here...</label>
-                <button class="w-100 btn btn-lg btn-primary">Submit</button>
+                <button type="submit" class="w-100 btn btn-lg btn-primary">Submit</button>
             </div>
         </form>
     </div>
 
-    <!-- Display prediction result -->
-    <div class="container">
+    <!-- Display classification result -->
+    <div class="container" id="resultContainer" style="display: none;">
         <h2>Classification Result</h2>
         <div id="result"></div>
     </div>
 
-    <!-- JavaScript code to interact with Flask backend -->
+    <!-- JavaScript to handle form submission and display result -->
     <script>
-        document.querySelector('form').onsubmit = async function (event) {
+        document.getElementById('emailForm').onsubmit = async function (event) {
             event.preventDefault();
             const formData = new FormData(event.target);
             const response = await fetch('/', {
@@ -147,7 +147,8 @@
                 body: formData
             });
             const result = await response.text();
-            document.getElementById('result').innerHTML = result;
+            document.getElementById('result').innerText = result;
+            document.getElementById('resultContainer').style.display = 'block';
         };
     </script>
 </body>

@@ -2,6 +2,38 @@
 <html>
 <head>
     <title>Spam Classifier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Spam Classifier</h1>
+        <label for="text" class="form-label">Enter text:</label>
+        <textarea class="form-control mb-3" id="text" rows="4" cols="50"></textarea>
+        <button class="btn btn-primary mb-3" onclick="classifyText()">Classify</button>
+        <p id="result"></p>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            Made by Shivani Shambhavi
+        </div>
+    </footer>
+
     <script>
         function classifyText() {
             var text = document.getElementById('text').value;
@@ -14,12 +46,5 @@
             }
         }
     </script>
-</head>
-<body>
-    <h1>Spam Classifier</h1>
-    <label for="text">Enter text:</label><br>
-    <textarea id="text" rows="4" cols="50"></textarea><br>
-    <button onclick="classifyText()">Classify</button><br>
-    <p id="result"></p>
 </body>
 </html>

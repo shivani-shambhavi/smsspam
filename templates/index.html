@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Classifier</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #f6d365, #fda085);
+            color: black;
+            padding-top: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            background-color: #ff69b4;
+        }
+
+        .navbar-brand {
+            color: black;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #007bff;
+        }
+
+        /* Gradient Text Color */
+        .gradient-text {
+            background: linear-gradient(45deg, #f6d365, #fda085);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #343a40;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .footer-description {
+            margin: 0;
+        }
+
+        .btn-go-back {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+        }
+
+        .gif {
+            max-width: 100%;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .danger {
+            color: #dc3545;
+        }
+
+        .safe {
+            color: #28a745;
+        }
+
+        .made-by {
+            color: white;
+            padding: 2px 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container">
+        <nav class="navbar navbar-dark bg-pink">
+            <div class="container-fluid">
+                <a class="navbar-brand text-dark" href="#">Email Spam Classifier</a>
+                <a class="navbar-brand text-dark" href="#">Created by **SHIVANI SHAMBAVI**</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Input form -->
+    <div class="container">
+        <h2>Type an Email here to check if it is Spam or Ham</h2>
+        <form action="/" method="POST">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Write your mail here.." id="email" name="email"
+                    style="height: 100px"></textarea>
+                <label for="email">Write your email here...</label>
+                <button class="w-100 btn btn-lg btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
